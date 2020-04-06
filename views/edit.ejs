@@ -1,0 +1,15 @@
+<%- include('partials/header'); -%>
+<%- include('partials/header'); -%>
+
+<h1>Edit</h1>
+
+    <div class="form-div">
+      <form action="/edit/<%=item.id%>" method="POST">
+        <label for="title">Title</label><br>
+        <input class="form-control" type="text" name="title" value="<%=item.title%>"><br>
+        <label for="description">Description</label><br>
+        <input type="text" class="form-control" id="descripton" value="<%=item.description%>" name="description"><br>
+        <button class="btn btn-success btn-lg btn-block" type="submit">Save</button>
+    </form>
+    </div>
+<%- include('partials/footer'); -%>

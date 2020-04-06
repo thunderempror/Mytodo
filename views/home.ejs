@@ -1,0 +1,44 @@
+<%- include('partials/header'); -%>
+
+<div class="container">
+        <h1> My To Do</h1>
+
+
+    <div class="items">  
+        <dl>
+          <%for(var i=0;i<list.length;i++) {%>
+            <div class="task">            
+                   <h2><%=i+1%>. <%=list[i].title%></h2>
+                   <p><%=list[i].description%></p>
+
+                   <div class="row">
+                     <div class="col-6 btns">
+                      <a class="btn btn-warning btn-block" href="/delete/<%=list[i]._id%>">Delete</a>
+                     </div>
+                     <div class="col-6 btns" >
+                      <a class="btn btn-danger btn-block" href="/edit/<%=list[i]._id%>">Edit</a>
+                     </div>
+                   </div>
+                   <br>
+            </div>
+          <%}%>
+      </dl>
+  </div>
+
+  
+    <div class="form-div">
+        <h2>Add :</h2>
+
+        <form action="/" method="POST">
+         <label for="title">Title</label><br>
+        <input class="form-control" type="text" name="title"><br>
+        <label for="description">Description</label><br>
+        <input class="form-control" type="text" id="descripton" name="description"><br>
+        <button class="btn btn-primary btn-lg btn-block" type="submit">Add</button>
+    </form>
+
+   
+
+    </div>
+    </div>
+    <%- include('partials/footer'); -%>
